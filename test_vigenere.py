@@ -5,14 +5,16 @@ from vigenere import vigenere_decrypt, vigenere_encrypt
 
 class TestVigenere(TestCase):
   def setUp(self):
-    self.PLAIN = 'hello how are you today'
-    self.CIPHER = 'sixzb ssioe pcaig zhmm'
-    self.KEY = 'lemon'
+    self.ciphers = [
+      ('hello how are you today', 'sixzb ssioe pcaig zhmm', 'lemon')
+    ]
 
   def test_encrypt(self):
-    enc = vigenere_encrypt(self.PLAIN, self.KEY)
-    self.assertEqual(enc, self.CIPHER)
+    for plain, cipher, key in self.ciphers:
+      enc = vigenere_encrypt(plain, key)
+      self.assertEqual(enc, cipher)
 
   def test_decrypt(self):
-    dec = vigenere_decrypt(self.CIPHER, self.KEY)
-    self.assertEqual(dec, self.PLAIN.replace(' ', ''))
+    for plain, cipher, key in self.ciphers:
+      dec = vigenere_decrypt(cipher, key)
+      self.assertEqual(dec, plain.replace(' ', ''))

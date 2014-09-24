@@ -1,5 +1,6 @@
 ciphertools
 ===========
+[![Build Status](https://travis-ci.org/avp/ciphertools.svg?branch=master)](https://travis-ci.org/avp/ciphertools)
 
 A python file with common cipher functions.
 

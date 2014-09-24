@@ -17,4 +17,4 @@ class TestPlayfair(TestCase):
   def test_decrypt(self):
     for plain, cipher, key in self.ciphers:
       dec = playfair_decrypt(cipher, key)
-      self.assertEqual(plain, dec)
+      self.assertEqual(plain.replace(' ', ''), dec.replace('x', ''))

@@ -62,4 +62,29 @@ def playfair_encrypt(plain, key, padding='x'):
 
 
 def playfair_decrypt(cipher, key):
-  pass
+  grid = _construct_grid(key)
+  cipher = cipher.lower().replace('j', 'i')
+  cipher = [c for c in cipher]
+
+  def decrypt_lookup(di):
+    i1, j1 = None, None
+    i2, j2 = None, None
+    for i in xrange(5):
+      for j in xrange(5):
+        if grid[i][j] == di[0]:
+          i1, j1 = i, j
+        elif grid[i][j] == di[1]:
+          i2, j2 = i, j
+
+    if i1 == i2:
+      # Same row
+      return grid[i1][(j1 - 1) % 5] + grid[i1][(j2 - 1) % 5]
+    elif j1 == j2:
+      # Same column
+      return grid[(i1 - 1) % 5][j1] + grid[(i2 - 1) % 5][j1]
+    else:
+      # Form a rectangle
+      return grid[i1][j2] + grid[i2][j1]
+
+  digraphs = [''.join(cipher[idx:idx + 2]) for idx in range(0, len(cipher), 2)]
+  return ''.join([decrypt_lookup(digraph) for digraph in digraphs])

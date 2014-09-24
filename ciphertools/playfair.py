@@ -25,7 +25,7 @@ def playfair_encrypt(plain, key, padding='x'):
   grid = _construct_grid(key)
 
   idx = 0
-  while idx < len(plain) - 1:
+  while idx < len(plain):
     digraph = plain[idx:idx + 2]
     if len(digraph) == 1:
       plain.append(padding)

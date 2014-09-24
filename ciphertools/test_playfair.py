@@ -7,6 +7,7 @@ class TestPlayfair(TestCase):
   def setUp(self):
     self.ciphers = [
       ('hide the gold in the tree stump', 'bmodzbxdnabekudmuixmmouvif', 'playfair example'),
+      ('hello world', 'gmmvenyepmbz', 'lemons'),
     ]
 
   def test_encrypt(self):

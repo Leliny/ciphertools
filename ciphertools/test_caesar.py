@@ -6,7 +6,7 @@ from caesar import caesar, caesar_solve
 class TestCaesar(TestCase):
   def setUp(self):
     self.ciphers = [
-      ('hello how are you today?', 'mjqqt mtb fwj dtz ytifd?', 5),
+      ('hello how are you today?', 'mjqqt mtb fwj dtz ytifd?', 5)
     ]
 
   def test_caesar(self):

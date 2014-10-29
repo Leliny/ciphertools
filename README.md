@@ -18,8 +18,8 @@ Usage
 
 ```python
 from ciphertools import playfair
-ciphered = playfair_encrypt(plaintext, key)
-decrypted = playfair_decrypt(ciphered, key)
+ciphered = playfair.playfair_encrypt(plaintext, key)
+decrypted = playfair.playfair_decrypt(ciphered, key)
 ```
 
 Supported Ciphers

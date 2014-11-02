@@ -6,7 +6,7 @@ from skip import skip, skip_solve
 class TestSkip(TestCase):
   def setUp(self):
     self.ciphers = [
-      ('hello how are you today', 'h aodloe yo yoehrualw t', 5),
+      ('hello how are you today', 'h aodloe yo yoehrualw t', 5)
     ]
 
   def test_skip(self):

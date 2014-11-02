@@ -3,7 +3,7 @@ import string
 
 def _convert_char(c):
   letters = string.ascii_lowercase
-  return letters[len(letters) - 1 - letters.find(c)] if c in letters else c
+  return chr(ord('z') - ord(c) + ord('a')) if c in letters else c
 
 
 def atbash_encrypt(plain):
@@ -13,4 +13,5 @@ def atbash_encrypt(plain):
 
 def atbash_decrypt(cipher):
   """ Atbash decryption is equivalent to decryption """
+  cipher = cipher.lower()
   return atbash_encrypt(cipher)

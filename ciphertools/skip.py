@@ -12,6 +12,7 @@ def skip(plain, dist, offset=0):
     idx = (idx + dist) % len(plain)
   return ''.join(result)
 
+
 def _score(cipher, dist, offset):
   dec = skip(cipher, dist, offset=offset)
   dec_words = dec.split(' ')
